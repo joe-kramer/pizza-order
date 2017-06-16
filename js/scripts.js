@@ -30,9 +30,17 @@ $(document).ready(function() {
     $("span#orderName").text(order.address.name);
     $(".addressInfo").text(order.address.street + "</br>" + order.address.city + "," + order.address.state + order.address.zip);
     order.pizzas.forEach(function(pizza) {
-      $("#listPizzas").append("<li>" + pizza.size + "</li>");
+      $("#listPizzas").append("<li class='pizzaItem'>" + pizza.size + "</li>");
     });
   });
+
+  $(".pizzaItem").click(function() {
+    $(".pizzaDetails").show();
+    $(".pizzaDetails h4").text(this.size)
+    this.toppings.forEach(function(topping) {
+      $("#toppingsDisplay").append(topping);
+    });
+  })
 });
 
 //BACKEND
