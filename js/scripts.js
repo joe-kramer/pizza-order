@@ -28,7 +28,7 @@ $(document).ready(function() {
     $(".pizzaPage").hide();
     $(".resultPage").show();
     $("span#orderName").text(order.address.name);
-    $(".addressInfo").text(order.address.street + "</br>" + order.address.city + "," + order.address.state + order.address.zip);
+    $(".addressInfo").text(order.address.street + "<br />" + order.address.city + "," + order.address.state + " " + order.address.zip);
     order.pizzas.forEach(function(pizza) {
       $("#listPizzas").append("<li class='pizzaItem'>" + pizza.size + "</li>");
     });

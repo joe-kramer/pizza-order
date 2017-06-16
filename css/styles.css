@@ -22,3 +22,12 @@ body {
 .pizzaPage, .resultPage, .pizzaDetails {
   display: none;
 }
+
+.pizzaItem {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.pizzaItem:hover {
+  text-decoration: underline;
+}
