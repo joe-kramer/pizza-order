@@ -40,7 +40,12 @@ $(document).ready(function() {
     this.toppings.forEach(function(topping) {
       $("#toppingsDisplay").append(topping);
     });
-  })
+  });
+
+  $(".addPizza").click(function() {
+    $(".resultPage").hide();
+    $(".pizzaPage").show();
+  });
 });
 
 //BACKEND
