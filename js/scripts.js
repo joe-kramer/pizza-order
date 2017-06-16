@@ -14,6 +14,17 @@ $(document).ready(function() {
     $(".introPage").hide();
     $(".pizzaPage").show();
   });
+
+  $("form#pizza").submit(function(event) {
+    event.preventDefault();
+    var pizza = new Pizza();
+    var size = $("input:radio[name=size]:checked").val();
+    pizza.size = size;
+    $("input:checkbox[name=topping]:checked").each(function(){
+      var topping = $(this).val();
+      pizza.addTopping(topping);
+    });
+  });
 });
 
 //BACKEND
@@ -30,7 +41,7 @@ function Address(name, street, city, state, zip) {
   this.zip = zip;
 }
 
-function Pizza(toppings, size) {
+function Pizza() {
   this.toppings = [];
   this.size;
 }
@@ -39,6 +50,10 @@ Order.prototype.addAddress = function(address) {
   this.address = address;
 }
 
-Order.prototype.addPizza = function (pizza) {
+Order.prototype.addPizza = function(pizza) {
   this.pizzas.push(pizza);
+}
+
+Pizza.prototype.addTopping = function(topping) {
+  this.toppings.push(topping);
 }
