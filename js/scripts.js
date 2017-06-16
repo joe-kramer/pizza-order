@@ -75,11 +75,11 @@ function Pizza() {
 Order.prototype.finalCost = function() {
   var cost = 0;
   this.pizzas.forEach(function(pizza) {
-    if (pizza.size === "large") {
+    if (pizza.size === "Large") {
       cost += 8;
-    } else if (pizza.size === "medium") {
+    } else if (pizza.size === "Medium") {
       cost += 6;
-    } else if (pizza.size === "small") {
+    } else if (pizza.size === "Small") {
       cost += 5;
     }
     pizza.toppings.forEach(function(topping) {
