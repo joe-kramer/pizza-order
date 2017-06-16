@@ -24,6 +24,9 @@ $(document).ready(function() {
       var topping = $(this).val();
       pizza.addTopping(topping);
     });
+    order.addPizza(pizza);
+    $(".pizzaPage").hide();
+    $(".resultPage").show();
   });
 });
 

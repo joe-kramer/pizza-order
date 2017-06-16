@@ -19,6 +19,6 @@ body {
   border-radius: 20px;
 }
 
-.pizzaPage {
+.pizzaPage, .resultPage {
   display: none;
 }
