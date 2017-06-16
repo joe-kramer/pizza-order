@@ -32,6 +32,7 @@ $(document).ready(function() {
     order.pizzas.forEach(function(pizza) {
       $("#listPizzas").append("<li class='pizzaItem'>" + pizza.size + "</li>");
     });
+    $("#cost").text(order.finalCost());
   });
 
   $(".pizzaItem").click(function() {
@@ -69,6 +70,49 @@ function Address(name, street, city, state, zip) {
 function Pizza() {
   this.toppings = [];
   this.size;
+}
+
+Order.prototype.finalCost = function() {
+  var cost = 0;
+  this.pizzas.forEach(function(pizza) {
+    if (pizza.size === "large") {
+      cost += 8;
+    } else if (pizza.size === "medium") {
+      cost += 6;
+    } else if (pizza.size === "small") {
+      cost += 5;
+    }
+    pizza.toppings.forEach(function(topping) {
+      if (topping === "Pepperoni") {
+        cost += 1.5;
+      }
+      if (topping === "Sausage") {
+        cost += 1.5;
+      }
+      if (topping === "Ham") {
+        cost += 1.5;
+      }
+      if (topping === "Bacon") {
+        cost += 1.5;
+      }
+      if (topping === "Onions") {
+        cost += 1.5;
+      }
+      if (topping === "Peppers") {
+        cost += 1.5;
+      }
+      if (topping === "Mushrooms") {
+        cost += 1.5;
+      }
+      if (topping === "Olives") {
+        cost += 1.5;
+      }
+      if (topping === "Pineapple") {
+        cost += 1.5;
+      }
+    });
+  });
+  return cost;
 }
 
 Order.prototype.addAddress = function(address) {

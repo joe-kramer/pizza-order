@@ -31,3 +31,8 @@ body {
 .pizzaItem:hover {
   text-decoration: underline;
 }
+
+.cost {
+  font-weight: bold;
+  font-size: 24px;
+}
