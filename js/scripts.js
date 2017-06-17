@@ -32,16 +32,16 @@ $(document).ready(function() {
     order.pizzas.forEach(function(pizza) {
       $("#listPizzas").append("<li class='pizzaItem'>" + pizza.size + "</li>");
     });
+    $(".pizzaItem").last().click(function() {
+      $(".pizzaDetails").show();
+      $(".pizzaDetails h4").text();
+      this.toppings.forEach(function(topping) {
+        $("#toppingsDisplay").append(topping);
+      });
+    });
     $("#cost").text(order.finalCost());
   });
 
-  $(".pizzaItem").click(function() {
-    $(".pizzaDetails").show();
-    $(".pizzaDetails h4").text(this.size)
-    this.toppings.forEach(function(topping) {
-      $("#toppingsDisplay").append(topping);
-    });
-  });
 
   $("#addPizza").click(function() {
     $(".resultPage").hide();
