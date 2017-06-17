@@ -46,9 +46,8 @@ $(document).ready(function() {
   $("#addPizza").click(function() {
     $(".resultPage").hide();
     $(".pizzaPage").show();
-    $("input:checkbox[name=topping]:checked").each(function(){
-      $("input:checkbox[name=topping]");
-    });
+    $("input:checkbox[name=topping]:checked").prop('checked', false);
+    $("input:radio[name=size]:checked").prop('checked', false);
     $("#listPizzas").text("");
   });
 });

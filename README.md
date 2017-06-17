@@ -24,7 +24,6 @@ _This program simulates a typical pizza ordering website. The backend is setup w
 * _Find better way to do final cost_
 * _Columns are not working_
 * _Padding front .content isn't working on second slide_
-* _Need to clear checkboxes on "add new pizza"_
 * _Add up final cost after multiple pizzas_
 * _Get click to display working_
 
